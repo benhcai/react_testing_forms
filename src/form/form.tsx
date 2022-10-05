@@ -75,7 +75,7 @@ export function MultiStepForm({ onSubmit }: MultiStepFormProps) {
               </Box>
 
               <Box paddingBottom={1}>
-                <CustomDropdown name="job" />
+                <CustomDropdown name="job" label="Job Situation"/>
               </Box>
 
               <Box paddingBottom={1}>

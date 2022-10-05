@@ -1,9 +1,10 @@
 import { FormControl, FormHelperText } from "@mui/material";
-import { useField, Field, ErrorMessage } from "formik";
+import { useField, Field, ErrorMessage, withFormik } from "formik";
 import { Select } from "formik-mui";
 
 type CustomDropdown = {
-  name: string
+  name: string;
+  label: string
 }
 
 const fieldOptions = [
@@ -13,7 +14,7 @@ const fieldOptions = [
   {value: "UNEMPLOYED", text: "Unemployed"}, 
 ]
 
-export function CustomDropdown({ name }: CustomDropdown) {
+export function CustomDropdown({ name, label }: CustomDropdown) {
     const [field, props] = useField(name);
   
     return (
@@ -21,7 +22,8 @@ export function CustomDropdown({ name }: CustomDropdown) {
         <Field
           component={Select}
           native
-          name="job"
+          name={name}
+          poop="yes"
           inputProps={{
             id: 'job',
             'aria-errormessage': props.error ? 'job-error' : null,
